@@ -25,7 +25,7 @@ module.exports = {
   // 设定源代码为原来样式
   devtool: 'inline-source-map',
 
-  // npx webpack --watch  文件更新后代码自动编译
+  // npx webpack --watch  文件更新后代码自动编译1
 
   devServer: {
     static: './dist'
