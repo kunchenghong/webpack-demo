@@ -6,6 +6,7 @@ import jpgMap from './assets/qianfeng-sem.jpg';
 import './index.css';
 import './index.less';
 import _ from 'lodash'
+import './async-module';
 
 helloWorld();
 
