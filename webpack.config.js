@@ -5,11 +5,20 @@ const cssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
   entry: {
+    // index: {
+    //   import: './src/index.js',
+    //   dependOn: 'share',
+    // },
+    // another: {
+    //   import: './src/another-module.js',
+    //   dependOn: 'share',
+    // },
+    // share: 'lodash',
     index: './src/index.js',
-    another: './src/another-module.js'
+    another: './src/another-module.js',
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: 'scripts/[name].[contenthash].js',
     path: path.resolve(__dirname, './dist'),
     clean: true,
     assetModuleFilename: 'images/[contenthash][ext]'
@@ -87,6 +96,15 @@ module.exports = {
 optimization: {
   minimizer: [
     new cssMinimizerWebpackPlugin()
-  ]
+  ],
+  splitChunks: {
+    cacheGroups: {
+      vender: {
+        test: /[\\/]node_modules[\\/]/,
+        name: 'vender',
+        chunks: 'all'
+      }
+    }
+  }
 }
 }
