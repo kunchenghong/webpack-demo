@@ -5,6 +5,7 @@ import exampleTxt from './assets/example.txt';
 import jpgMap from './assets/qianfeng-sem.jpg';
 import './index.css';
 import './index.less';
+import _ from 'lodash'
 
 helloWorld();
 
@@ -28,3 +29,5 @@ img3.src = jpgMap
 document.body.appendChild(img3)
 
 document.body.classList.add('hello')
+
+console.log(_.join(['eeeee','fffff','hhhhh'], ','))
