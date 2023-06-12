@@ -21,9 +21,9 @@ module.exports = {
   },
   output: {
     // 输出文件的文件名
-    filename: 'scripts/[name].[contenthash].js',
+    // filename: 'scripts/[name].[contenthash].js',
     // app.html文件 script引入src的路径
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, '../dist'),
     clean: true,
     assetModuleFilename: 'images/[contenthash][ext]'
   },
@@ -37,15 +37,15 @@ module.exports = {
       filename: 'styles/[contenthash].css'
     }),
   ],
-  mode: 'development',
+  // mode: 'development',
   // 设定源代码为原来样式
-  devtool: 'inline-source-map',
+  // devtool: 'inline-source-map',
 
   // npx webpack --watch  文件更新后代码自动编译1
 
-  devServer: {
-    static: './dist'
-  },
+  // devServer: {
+  //   static: './dist'
+  // },
 // 模块相关配置
   module: {
     rules: [
@@ -98,12 +98,12 @@ module.exports = {
     ]
   },
 optimization: {
-  minimizer: [
-    // 压缩css代码
-    new cssMinimizerWebpackPlugin(),
-    // 压缩代码，在production环境生效
-    new TerserWebpackPlugin()
-  ],
+  // minimizer: [
+  //   // 压缩css代码
+  //   new cssMinimizerWebpackPlugin(),
+  //   // 压缩代码，在production环境生效
+  //   new TerserWebpackPlugin()
+  // ],
   // 拆分chunks,代码分离，静态资源分离必须打开
   splitChunks: {
     // 缓存第三方库
